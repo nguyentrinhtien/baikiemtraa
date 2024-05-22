@@ -11,19 +11,18 @@ class FoodFactory extends Factory
 {
     /**
      * Define the model's default state.
-     *
+     protected $model = Food::class;
      * @return array<string, mixed>
      */
     public function definition()
     {
-        $categories = ['Hoa quả', 'Thực phẩm hữu cơ', 'Thực phẩm khô', 'Sản phẩm nổi bật'];
-
         return [
-            'name' => $this->faker->word,
-            'category' => $this->faker->randomElement($categories),
-            'description' => $this->faker->sentence,
-            'price' => $this->faker->randomFloat(2, 1, 100),
-            'image' => $this->faker->imageUrl(640, 480, 'food', true, 'food'), // Thêm dòng này
+            'name' => fake()->lexify('id-????'),
+            'price' => fake()->numberBetween(70, 100),
+            'price_sale' =>fake()->randomFloat(30, 50, 69),
+            'detail' => fake()->lexify('id-????'),
+            'image' => '.png', // Sử dụng đường dẫn tương đối
+            // 'mf_id' => rand(1,8),
         ];
     }
 }

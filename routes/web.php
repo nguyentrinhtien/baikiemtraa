@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\PageController;
 
 
 
@@ -17,11 +18,6 @@ use App\Http\Controllers\FoodController;
 |
 */
 
-//Route::get('baikiemtra', function () {
-    //return view('baikiemtra.index-show');
-//}/);
+Route::resource('foods',FoodController::class);
 
-Route::get('baikiemtra', function () {
-    return view('baikiemtra.kiemtra-show');
-});
-
+Route::get('shopping',[PageController::class,'index_show']);
